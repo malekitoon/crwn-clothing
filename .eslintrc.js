@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  parser: 'babel-eslint',
   extends: [
     'plugin:react/recommended',
     'airbnb',
@@ -14,6 +15,7 @@ module.exports = {
   },
   plugins: [
     'react',
+    '@babel',
   ],
   rules: {
     'jsx-quotes': ['error', 'prefer-single'],
@@ -32,7 +34,13 @@ module.exports = {
     'class-methods-use-this': 0,
     'func-names': 0,
     'react/prop-types': 0,
-    'jsx-a11y/click-events-have-key-events': 0, // bad for i11n
-    'jsx-a11y/no-static-element-interactions': 0, // bad for i11n
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/anchor-is-valid': 0,
+    // '@babel/new-cap': 'error',
+    // '@babel/no-invalid-this': 'error',
+    // '@babel/no-unused-expressions': 'error',
+    // '@babel/object-curly-spacing': 'error',
+    // '@babel/semi': 'error',
   },
 };
