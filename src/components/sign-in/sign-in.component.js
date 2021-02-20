@@ -21,8 +21,6 @@ class SignIn extends Component {
 
   handleChange = e => {
     const { value, name } = e.target;
-    console.log(value);
-    console.log(name);
     this.setState({ [name]: value });
   }
 
@@ -40,7 +38,7 @@ class SignIn extends Component {
             label='Email'
             name='email'
             value={email}
-            handleChange={e => { this.handleChange(e); }}
+            handleChange={this.handleChange}
             required
           />
 
