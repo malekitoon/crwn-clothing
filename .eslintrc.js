@@ -20,7 +20,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'object-curly-newline': ['error', { multiline: true }],
     'arrow-parens': ['error', 'as-needed'],
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-console': 0, // ['error', { allow: ['warn', 'error'] }],
     'react/no-unescaped-entities': 0,
     'no-shadow': 0,
     'react/jsx-props-no-spreading': 0,
