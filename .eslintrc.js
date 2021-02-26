@@ -20,7 +20,7 @@ module.exports = {
   rules: {
     'jsx-quotes': ['error', 'prefer-single'],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'object-curly-newline': ['error', { multiline: true }],
+    'object-curly-newline': ['error', { consistent: true }],
     'arrow-parens': ['error', 'as-needed'],
     'no-console': 0, // ['error', { allow: ['warn', 'error'] }],
     'react/no-unescaped-entities': 0,
