@@ -28,9 +28,9 @@ class App extends Component {
             ...snapShot.data(),
           });
         });
-      } else {
-        setCurrentUser(userAuth);
       }
+
+      setCurrentUser(userAuth);
     });
   }
 
@@ -60,8 +60,12 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({ currentUser: selectCurrentUser });
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
 
-const mapDispatchToProps = dispatch => ({ setCurrentUser: user => dispatch(setCurrentUser(user)) });
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
