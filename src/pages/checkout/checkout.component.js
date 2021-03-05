@@ -4,43 +4,50 @@ import { createStructuredSelector } from 'reselect';
 import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selectors';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
-
-import './checkout.styles.scss';
+import {
+  CheckoutPageContainer,
+  CheckoutHeaderContainer,
+  HeaderBlockContainer,
+  TotalContainer,
+  WarningContainer,
+} from './checkout.styles';
 
 const CheckoutPage = ({ cartItems, total }) => (
-  <div className='checkout-page'>
-    <div className='checkout-header'>
-      <div className='header-block'>
+  <CheckoutPageContainer>
+    <CheckoutHeaderContainer>
+      <HeaderBlockContainer>
         <span>Product</span>
-      </div>
+      </HeaderBlockContainer>
 
-      <div className='header-block'>
+      <HeaderBlockContainer>
         <span>Description</span>
-      </div>
+      </HeaderBlockContainer>
 
-      <div className='header-block'>
+      <HeaderBlockContainer>
         <span>Quantity</span>
-      </div>
+      </HeaderBlockContainer>
 
-      <div className='header-block'>
+      <HeaderBlockContainer>
         <span>Price</span>
-      </div>
+      </HeaderBlockContainer>
 
-      <div className='header-block'>
+      <HeaderBlockContainer>
         <span>Remove</span>
-      </div>
-    </div>
+      </HeaderBlockContainer>
+    </CheckoutHeaderContainer>
 
     {cartItems.map(cartItem => <CheckoutItem key={cartItem.id} item={cartItem} />)}
 
-    <div className='total'>{`TOTAL: $${total}`}</div>
-    <div className='text-warning'>
+    <TotalContainer>{`TOTAL: $${total}`}</TotalContainer>
+
+    <WarningContainer>
       *Please use the following test credit card for payments*
       <br />
       4242 4242 4242 4242 - Exp: 11/24 - CVV: 123
-    </div>
+    </WarningContainer>
+
     <StripeCheckoutButton price={total} />
-  </div>
+  </CheckoutPageContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
